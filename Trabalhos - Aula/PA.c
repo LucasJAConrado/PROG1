@@ -1,41 +1,44 @@
+/* PROGRAMA PARA CALCULAR O TERMO GERAL DE UMA PROGRESSÃO ARITIMÉTICA
+Nome: Lucas Jacintho de Abreu Conrado
+*/
+
 #include <stdio.h>
 
 int main()
 
 {
 
-int primeirotermo;
-int razao;
+float primeirotermo;
+float razao;
 int termo;
 int resposta;
-int soma; 
 
-printf("\n\n Entre com o primeiro termo da PA: \n\n");
-scanf("%d", &primeirotermo);
+printf("PROGRAMA PARA CALCULAR O TERMO GERAL DE UMA PROGRESSAO ARITIMETICA (P.A)\n\n");
 
-printf("\n\n Entre com a razao da PA: \n\n");
-scanf("%d", &razao);
+do
+{
+printf("Entre com o primeiro termo da PA: ");
+scanf("%f", &primeirotermo);
 
-printf("\n\n Escolha qual termo da PA voce deseja calcular:\n\n");
+printf("\n\nEntre com a razao da PA: ");
+scanf("%f", &razao);
+
+printf("\n\nEscolha qual termo da PA voce deseja calcular: ");
 scanf("%d", &termo);
 
-printf("\n\n O %d termo da PA e: %d + (%d - 1)*%d = %d \n\n",termo,primeirotermo,termo,razao,primeirotermo + (termo - 1)*razao);
+printf("\n\nO %d termo da PA e: %f + (%d - 1)*%f = %.2f \n\n",termo,primeirotermo,termo,razao,primeirotermo + (termo - 1)*razao);
 
-printf("\n\n Voce deseja calcular a soma dos termos da PA ? \n\n 1- Sim 2-Nao \n\n ");
+printf("\n\nVoce deseja calcular o termo geral de outra PA ? \n\n 1- Sim 2-Nao \n\n ");
 scanf("%d", &resposta);
+}
+while (resposta==1);
 
-if(resposta==1)
-
+if (resposta==2)
 {
-printf("\n\n A soma dos %d termos da PA e igual a: (%d + %d)*(%d/2)=%d \n\n",termo,primeirotermo,primeirotermo + (termo - 1)*razao,termo,(primeirotermo + primeirotermo + (termo - 1)*razao )*(termo/2));
+printf("\n\n Foi um prazer, ate mais !\n\n");
 }
 
-else if(resposta==2)
-
-{
-printf("\n\n--------------------FIM ----------------------\n\n");
-}
 
 system("pause");
-
+return 0;
 }
